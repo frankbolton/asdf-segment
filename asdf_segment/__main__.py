@@ -9,6 +9,7 @@ import napari
 from .io import load_nifti
 from .keybindings import bind_keys
 from .labels import LabelModel
+from .mouse import bind_mouse
 from .viewer import build_viewer
 from .widgets.label_table import LabelTableWidget
 from .widgets.save_panel import SavePanelWidget
@@ -25,6 +26,7 @@ def main() -> None:
     labels_layer = viewer.layers["segmentation"]
 
     bind_keys(viewer, labels_layer, label_model)
+    bind_mouse(labels_layer)
 
     viewer.window.add_dock_widget(
         LabelTableWidget(label_model, labels_layer), name="Labels", area="right"

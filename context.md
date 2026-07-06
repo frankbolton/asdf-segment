@@ -21,7 +21,11 @@ summary + next actions.
 
 - **Slicing:** single fixed axis (default last/z). No plane switching.
 - **Brush:** click-to-stamp — single click paints one filled circle of the current radius.
-- **Editing:** eraser mode (also **right-click**) + **Ctrl+Z** undo.
+- **Editing:** eraser mode + **Ctrl+Z** undo. **Right-click deletes a segment**: the
+  contiguous region under the cursor, only if it has the active label's value
+  (`asdf_segment/mouse.py`; napari fires the paint callback for every button, so the
+  callback freezes the cursor to `circle_frozen` during the click — napari's own
+  guard — to stop right-click paint-stamping).
 - **Labels:** 10-row table, **editable in-app** — editable names, palette colours
   (overridable), active row highlighted.
 - **Save:** button + **filename selector** for the output path.
@@ -34,7 +38,8 @@ summary + next actions.
 | Brush radius | napari brush-size slider |
 | Active label | click table row · **D** / **F** (down/up list) |
 | Paint | left-click (stamp filled circle) |
-| Erase | eraser mode / right-click |
+| Erase | eraser mode |
+| Delete segment | right-click a contiguous region of the **active** label (fills it with background; Ctrl+Z restores) |
 | Undo | Ctrl+Z |
 | Save | button + filename selector |
 
