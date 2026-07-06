@@ -1,0 +1,23 @@
+[project]
+name = "asdf-segment"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "magicgui>=0.10.2",
+    "napari[all]>=0.7.1",
+    "nibabel>=5.4.2",
+]
+
+[project.scripts]
+asdf-segment = "asdf_segment.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
