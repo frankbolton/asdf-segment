@@ -19,7 +19,7 @@ def _step_slice(viewer: napari.Viewer, delta: int) -> None:
     axis = viewer.dims.order[0]
     nsteps = viewer.dims.nsteps[axis]
     current = viewer.dims.current_step[axis]
-    new = max(0, min(nsteps - 1, current + delta))
+    new = (current + delta) % nsteps  # wrap around at both ends of the stack
     viewer.dims.set_current_step(axis, new)
 
 

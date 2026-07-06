@@ -34,7 +34,7 @@ summary + next actions.
 
 | Action | Control |
 | --- | --- |
-| Change slice | dims slider · scroll wheel · **A** / **S** |
+| Change slice | dims slider · scroll wheel · **A** / **S** (wrap around at the ends) |
 | Brush radius | napari brush-size slider |
 | Active label | click table row · **D** / **F** (down/up list) |
 | Paint | left-click (stamp filled circle) |
